@@ -161,7 +161,11 @@ export default function ClientsPage() {
           <tbody>
             {clients.map((c) => (
               <tr key={c.id} className="border-t border-[#D9D4C7]">
-                <td className="p-3 font-semibold text-[#0F1B2D]">{c.nom}</td>
+                <td className="p-3 font-semibold text-[#0F1B2D]">
+                  <a href={`/clients/${c.id}`} className="hover:underline">
+                    {c.nom}
+                  </a>
+                </td>
                 <td className="p-3 font-mono text-xs">{c.prefixe_facture || '—'}</td>
                 <td className="p-3 font-mono text-xs">{c.dernier_numero_bon}</td>
                 <td className="p-3 font-mono text-xs text-[#C8862E] font-semibold">
